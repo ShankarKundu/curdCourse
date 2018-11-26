@@ -1,0 +1,23 @@
+server:
+  port: 9056
+spring:
+  port: 9010
+  cloud:
+   stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+      bindings:
+        students-in:
+          destination: students
+          contentType: application/json
+
+
+#
+#  kafka:
+#      consumer:
+#        auto-offset-reset: latest
+#        group-id: student-group
+#        ENABLE_AUTO_COMMIT_CONFIG: true
+#        AUTO_COMMIT_INTERVAL_MS_CONFIG: 5000
